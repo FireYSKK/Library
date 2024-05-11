@@ -5,11 +5,11 @@ services:
     working_dir: /app
     restart: always
     ports:
-      - 80:80
+      - 80:3000
     volumes:
       - ./frontend/library/public/:/app/public/
       - ./frontend/library/src/:/app/src/
-    command: sleep infinity
+    command: npm start
     depends_on:
       - django
 
