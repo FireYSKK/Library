@@ -1,0 +1,24 @@
+.container {
+  height: calc(100vh - 44px);
+
+  display: flex;
+  align-items: start;
+}
+
+.content {
+  margin-top: 100px;
+
+  color: #303B44;
+  background-color: var(--background-color);
+
+  padding: 50px 50px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & h1 {
+    font-weight: bold;
+  }
+}

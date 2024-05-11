@@ -1,0 +1,20 @@
+.form {
+    display: flex;
+  
+  
+    flex-direction: column;
+  
+    gap: 10px;
+  
+    min-width: 400px;
+    max-width: 400px;
+  }
+  
+  .input {
+    width: 100%;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: center;
+  }

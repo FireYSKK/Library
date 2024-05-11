@@ -1,0 +1,15 @@
+.page {
+  min-height: 90vh;
+}
+
+.container {
+  background: #303B44;
+  margin-top: 200px;
+
+  color: white;
+  font-size: 40px;
+
+  padding: 50px 100px;
+
+  border-radius: 20px;
+}

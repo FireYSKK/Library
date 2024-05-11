@@ -1,0 +1,43 @@
+.container {
+    padding: 100px;
+    font-size: large;
+    min-height: 100vh;
+    z-index: 0;
+    background-color: bisque;
+    color: black;
+    width: 50%;
+}
+
+.image {
+    margin: 20px 50px 20px 0;
+    
+}
+
+.cardcover {
+    width: 230px;
+}
+
+.bookInfo a {
+    text-decoration: none;
+    color: black;
+}
+
+.bookInfo a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.take {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: var(--supporting-color);
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.take:hover {
+    background-color: hsl(28, 65%, 52%);
+    transition: 0.2s;
+}

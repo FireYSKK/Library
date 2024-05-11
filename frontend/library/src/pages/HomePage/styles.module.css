@@ -1,0 +1,13 @@
+.page__block{
+    padding: 100px;
+    font-size: large;
+    min-height: 100vh;
+    z-index: 0;
+    background-color: bisque;
+    color: black;
+    width: 50%;
+}
+
+.wallpaper {
+    width: 1000px;
+}

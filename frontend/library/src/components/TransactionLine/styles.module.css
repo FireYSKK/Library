@@ -1,0 +1,16 @@
+.container {
+    outline: 2px solid;
+}
+
+td {
+    outline: 2px solid;
+    padding: 7px;
+}
+
+.expired {
+    color: red;
+}
+
+.normal {
+    color: black;
+}

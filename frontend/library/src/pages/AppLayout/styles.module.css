@@ -1,0 +1,10 @@
+.content {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wallpaper {
+  position: fixed;
+  z-index: -1;
+}

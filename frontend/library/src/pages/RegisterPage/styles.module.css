@@ -1,0 +1,38 @@
+.form {
+    display: flex;
+
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    min-width: 400px;
+    max-width: 400px;
+}
+  
+.input {
+    width: 100%;
+}
+  
+.checkbox {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+  
+.labelCheckbox {
+    display: flex;
+
+    cursor: pointer;
+
+    gap: 10px;
+    align-items: center;
+}
+  
+  
+.btn {
+    display: flex;
+    justify-content: center;
+}
