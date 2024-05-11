@@ -1,4 +1,17 @@
 services:
+  node:
+    build: ./frontend/library
+    container_name: react
+    working_dir: /app
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend/library/public/:/app/public/
+      - ./frontend/library/src/:/app/src/
+    command: sleep infinity
+    depends_on:
+      - django
 
   api_gateway:
     container_name: api_gateway
