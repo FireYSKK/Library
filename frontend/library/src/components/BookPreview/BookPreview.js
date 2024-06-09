@@ -2,7 +2,7 @@ import styles from './styles.module.css'
 import {Link} from "react-router-dom";
 
 
-const API_URL = "http://localhost:3020";
+const API_URL = "http://django:3020";
 
 
 const BookPreview = (book) => {
