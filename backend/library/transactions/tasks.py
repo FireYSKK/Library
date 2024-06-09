@@ -10,7 +10,7 @@ STATUSES = Transaction.Status
 
 @app.task
 def check_expiration():
-    queryset = Transaction.objects.filter(status__in=[Transaction.Status.PENDING, Transaction.Status.ACTIVE])
+    queryset = Transaction.objects.filter(status__in=[STATUSES.PENDING, STATUSES.ACTIVE])
     queryset = queryset.filter(expires__lt=datetime.date.today())
 
     for transaction in queryset:

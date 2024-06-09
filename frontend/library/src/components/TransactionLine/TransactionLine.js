@@ -4,7 +4,7 @@ import 'primeicons/primeicons.css';
 import { useNavigate } from "react-router-dom";
 
 const TransactionLine = ({id, customer, book, status, confirmed_by, is_expired}) => {
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
 
     const STATUS = {
         0: "Создана",

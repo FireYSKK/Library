@@ -11,7 +11,6 @@ import {TransactionPage} from "../../pages/TransactionPage/TransactionPage.js";
 
 
 const AppRouter = () => {
-    
     return (
         <BrowserRouter>
             <Routes>

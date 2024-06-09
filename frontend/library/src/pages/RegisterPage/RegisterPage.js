@@ -5,7 +5,7 @@ import {classNames} from "primereact/utils";
 import {InputText} from "primereact/inputtext";
 import {Button} from "primereact/button";
 import {Password} from "primereact/password";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {AuthService} from "../../services/AuthService/AuthService.js";
 

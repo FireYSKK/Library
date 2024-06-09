@@ -26,7 +26,6 @@ const HomePage = () => {
         try {
             const books_responce = await BookService.getAll()
 
-            console.log(books_responce)
             console.log(books_responce.data)
             setBooks(books_responce.data)
 

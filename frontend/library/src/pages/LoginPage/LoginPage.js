@@ -59,15 +59,16 @@ const LoginPage = () => {
         setLoading(false)
     };
 
-    const getFormErrorMessage = (name) => {
-        // @ts-ignore
-        return errors[name] ? <small className="p-error">{errors[name].message}</small> : <small className="p-error">&nbsp;</small>;
-    };
+    // const getFormErrorMessage = (name) => {
+    //     // @ts-ignore
+    //     return errors[name] ? <small className="p-error">{errors[name].message}</small> : <small className="p-error">&nbsp;</small>;
+    // };
 
     return (
         <>
             <h1>Вход</h1>
             <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+
 
                 <Controller
                     name="email"
