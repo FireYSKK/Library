@@ -2,7 +2,9 @@ import styles from './styles.module.css'
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const BookElement = ({id, title, author, description, image_online, is_available}) => {
+const API_URL = "http://158.160.134.0:3020/"
+
+const BookElement = ({id, title, author, description, image, is_available}) => {
     const navigate = useNavigate()
 
     const onSubmit = (e) => {
@@ -16,7 +18,7 @@ const BookElement = ({id, title, author, description, image_online, is_available
     return (
         <div className={styles.container}>
             <Link to={'/books/' + id} className={styles.image}>
-                 <img src={image_online} className={styles.cardcover} alt='' />
+                 <img src={API_URL + image} className={styles.cardcover} alt='' />
             </Link>
             <div className={styles.bookInfo}>
                 <Link to={'/books/' + id}>

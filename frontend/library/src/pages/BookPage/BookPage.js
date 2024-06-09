@@ -4,6 +4,8 @@ import {useEffect, useState} from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import {BookService} from "../../services/BookService/BookService.js";
 
+const API_URL = "http://158.160.134.0:3020/"
+
 const BookPage = () => {
     const [book, setBook] = useState([])
     const navigate = useNavigate();
@@ -34,7 +36,7 @@ const BookPage = () => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        alert("Вы хотите забронировать " + book.title + "?")
+        confirm("Вы хотите забронировать " + book.title + "?")
 
         navigate('/books/' + book.id + "/take")
     }
@@ -43,7 +45,7 @@ const BookPage = () => {
     return (
         <div className={styles.container}>
             <Link to={'/book/' + book.id} className={styles.image}>
-                <img src={book.image_online} className={styles.cardcover} alt='' />
+                <img src={API_URL + book.image} className={styles.cardcover} alt='' />
             </Link>
             <div className={styles.bookInfo}>
                 <Link to={'/book/' + book.id}>

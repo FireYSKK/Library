@@ -73,7 +73,7 @@ const CatalogPage = () => {
 
                 <div className={styles.bookList}>
                     {books.map(item => (
-                        <BookElement key={item.id} id={item.id} title={item.title} author={item.author} description={item.description} is_available={item.is_available} image_online={item.image_online}/>
+                        <BookElement key={item.id} id={item.id} title={item.title} author={item.author} description={item.description} is_available={item.is_available} image={item.image}/>
                     ))}
                 </div>
                 

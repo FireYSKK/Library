@@ -2,7 +2,7 @@ import styles from './styles.module.css'
 import {Link} from "react-router-dom";
 
 
-const API_URL = "http://localhost:3020";
+const API_URL = "http://158.160.134.0:3020";
 
 
 const BookPreview = (book) => {
