@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Transaction, Book
+from authentication.models import CustomUser
 from .serializers import TransactionSerializer, BookSerializer
 from django.core.cache import cache
 from django.conf import settings
@@ -60,8 +61,13 @@ class TransactionView(APIView):
     # Create new transaction
     @token_required
     def post(self, request):
+        print("data:", request.data, file=sys.stderr)
+        user = CustomUser.objects.get(id=request.data['customer'])
+        book = Book.objects.get(id=request.data['book'])
         serializer = TransactionSerializer(data=request.data)
         if serializer.is_valid():
+            serializer.validated_data['customer'] = user
+            serializer.validated_data['book'] = book
             serializer.save()
             book = serializer.validated_data['book']
             book.is_available = False
@@ -102,6 +108,15 @@ class TransactionDetailView(APIView):
         if serializer.is_valid():
             if serializer.validated_data['status'] == STATUSES.ACTIVE:
                 serializer.validated_data['expires'] = lending_time()
+                serializer.validated_data['status'] == STATUSES.FINISHED
+            if serializer.validated_data['status'] == STATUSES.PENDING:
+                serializer.validated_data['status'] = STATUSES.ACTIVE
+                serializer.validated_data['expires'] = lending_time()
+            if serializer.validated_data['status'] == STATUSES.EXPIRED:
+                serializer.validated_data['status'] == STATUSES.FINISHED
+                book = serializer.validated_data['book']
+                book.is_available = True
+                book.save()
             if serializer.validated_data['status'] == STATUSES.DENIED \
                     or serializer.validated_data['status'] == STATUSES.FINISHED:
                 book = serializer.validated_data['book']

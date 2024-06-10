@@ -4,7 +4,9 @@ import {Footer} from "../../components/Footer/Footer.js";
 import styles from './styles.module.css'
 import {createContext, useEffect, useState} from "react";
 import {AuthService} from "../../services/AuthService/AuthService.js";
-import wallpaper from '../../assets/bookshelf2x.png'
+import wallpaper from '../../assets/bookshelf2x.png';
+import "primereact/resources/themes/saga-orange/theme.css";
+
 
 export const AppContext = createContext(null)
 const AppLayout = () => {

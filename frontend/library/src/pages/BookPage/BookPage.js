@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import {useEffect, useState} from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import {BookService} from "../../services/BookService/BookService.js";
+import { TransactionService } from '../../services/TransactionService/TransactionService.js';
 
 const API_URL = "http://158.160.134.0:3020/"
 
@@ -26,19 +27,31 @@ const BookPage = () => {
     }
 
     useEffect(() => {
-        let ignore = false
         getBook()
-        return () => {
-            ignore = true
-        }
     }, []);
 
     const onSubmit = (e) => {
         e.preventDefault();
 
-        confirm("Вы хотите забронировать " + book.title + "?")
+        if (window.confirm("Вы хотите забронировать " + book.title + "?")) {
+            console.log("Transaction added");
 
-        navigate('/books/' + book.id + "/take")
+            const body = {
+                customer: Number(localStorage.getItem('userID')),
+                book: book.id,
+                status: 1
+            }
+
+            console.log(body);
+
+            try {
+                TransactionService.post(body);
+            }
+            catch(e) {
+                alert("Произошла ошибка");
+            }
+        }
+
     }
     
 
